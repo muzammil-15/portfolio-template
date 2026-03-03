@@ -1,14 +1,14 @@
 import { Icons } from "@/components/icons";
 
 export const DATA = {
-  name: "Prath Warthy",
-  initials: "PS",
+  name: "Muzammil Hussain",
+  initials: "MH",
   role: "Freelancer",
   url: "https://motionx.design",
   headline: "I design and build products that deliver",
   headlineAccent: "real impact",
   description:
-    "Hello, I'm Prath Warthy, Freelancer",
+    "Hello, I'm Muzammil Hussain, Freelancer",
   avatarUrl: "/avatar.png",
 
   navbar: [

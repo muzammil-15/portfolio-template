@@ -4,6 +4,7 @@ import { Icons } from "@/components/icons";
 import { DATA } from "@/data/resume";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { ModeToggle } from "@/components/mode-toggle";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -18,8 +19,8 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-          ? "bg-background/80 backdrop-blur-xl border-b border-border shadow-sm"
-          : "bg-transparent"
+        ? "bg-background/80 backdrop-blur-xl border-b border-border shadow-sm"
+        : "bg-transparent"
         }`}
     >
       <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
@@ -42,7 +43,8 @@ export default function Navbar() {
         </div>
 
         {/* CTA Button */}
-        <div className="hidden md:flex items-center">
+        <div className="hidden md:flex items-center gap-4">
+          <ModeToggle />
           <Link
             href="/#contact"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-lg"
@@ -55,24 +57,27 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Menu Button */}
-        <button
-          className="md:hidden flex flex-col gap-1.5 p-2"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Toggle menu"
-        >
-          <span
-            className={`block w-5 h-0.5 bg-foreground transition-all duration-300 ${mobileOpen ? "rotate-45 translate-y-2" : ""
-              }`}
-          />
-          <span
-            className={`block w-5 h-0.5 bg-foreground transition-all duration-300 ${mobileOpen ? "opacity-0" : ""
-              }`}
-          />
-          <span
-            className={`block w-5 h-0.5 bg-foreground transition-all duration-300 ${mobileOpen ? "-rotate-45 -translate-y-2" : ""
-              }`}
-          />
-        </button>
+        <div className="flex items-center gap-4 md:hidden">
+          <ModeToggle />
+          <button
+            className="flex flex-col gap-1.5 p-2"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="Toggle menu"
+          >
+            <span
+              className={`block w-5 h-0.5 bg-foreground transition-all duration-300 ${mobileOpen ? "rotate-45 translate-y-2" : ""
+                }`}
+            />
+            <span
+              className={`block w-5 h-0.5 bg-foreground transition-all duration-300 ${mobileOpen ? "opacity-0" : ""
+                }`}
+            />
+            <span
+              className={`block w-5 h-0.5 bg-foreground transition-all duration-300 ${mobileOpen ? "-rotate-45 -translate-y-2" : ""
+                }`}
+            />
+          </button>
+        </div>
       </nav>
 
       {/* Mobile Menu */}
