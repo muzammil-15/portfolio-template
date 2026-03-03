@@ -1,113 +1,87 @@
 "use client";
 
-import { Icons } from "@/components/icons";
-import { DATA } from "@/data/resume";
-import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import {
+  Navbar,
+  NavBody,
+  NavItems,
+  NavLogo,
+  NavButton,
+  MobileNav,
+  MobileNavHeader,
+  MobileNavMenu,
+  MobileNavToggle,
+  type NavItem,
+} from "@/components/motionx/navbar";
 import { ModeToggle } from "@/components/mode-toggle";
 
-export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
+const navItems: NavItem[] = [
+  { name: "Home", link: "#home" },
+  { name: "About", link: "#about" },
+  { name: "Work", link: "#work" },
+];
+
+export default function AppNavbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-        ? "bg-background/80 backdrop-blur-xl border-b border-border shadow-sm"
-        : "bg-transparent"
-        }`}
-    >
-      <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group">
-          <Icons.logo className="size-9 text-foreground transition-transform duration-200 group-hover:scale-105" />
-        </Link>
-
-        {/* Desktop Nav Links */}
-        <div className="hidden md:flex items-center gap-8">
-          {DATA.navbar.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
-            >
-              {item.label}
-            </Link>
-          ))}
+    <div className="fixed top-0 left-0 right-0 z-50">
+      <Navbar className="relative mt-4">
+        {/* Desktop */}
+        <div className="border hidden sm:flex w-max rounded-full mx-auto border-neutral-100 dark:border-white/10">
+          <NavBody className="mx-auto flex w-fit max-w-fit items-center justify-between rounded-full bg-white/80 backdrop-blur-md  px-3 py-2 shadow-md dark:bg-neutral-950/80 dark:shadow-[0_4px_24px_rgba(255,255,255,0.15)]">
+          <NavLogo className="pl-4 pr-6 text-xl font-bold tracking-tight text-neutral-900 dark:text-white">
+            MH
+          </NavLogo>
+          <NavItems items={navItems} />
+          <div className="pl-6 flex items-center gap-3">
+            <NavButton variant="primary">Book a Call</NavButton>
+            <div className="h-5 w-px bg-neutral-200 dark:bg-neutral-800" />
+            <ModeToggle />
+          </div>
+        </NavBody>
         </div>
+        
 
-        {/* CTA Button */}
-        <div className="hidden md:flex items-center gap-4">
-          <ModeToggle />
-          <Link
-            href="/#contact"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-lg"
-            style={{
-              background: "linear-gradient(135deg, #FF6B35 0%, #FF8C61 100%)",
-            }}
+        {/* Mobile */}
+        <div className="border flex sm:hidden w-[90%] mx-auto rounded-2xl border-neutral-100 dark:border-white/10">
+        <MobileNav className="rounded-2xl  bg-white/80 backdrop-blur-md  px-3 py-2 shadow-md dark:bg-neutral-950/80 dark:shadow-[0_4px_24px_rgba(255,255,255,0.15)]">
+          <MobileNavHeader>
+            <NavLogo className="text-xl font-bold tracking-tight text-neutral-900 dark:text-white">
+              PS
+            </NavLogo>
+            <div className="flex items-center gap-3">
+              <MobileNavToggle
+                isOpen={mobileOpen}
+                onClick={() => setMobileOpen(!mobileOpen)}
+              />
+              <div className="h-5 w-px bg-neutral-200 dark:bg-neutral-800" />
+              <ModeToggle />
+            </div>
+          </MobileNavHeader>
+          <MobileNavMenu
+            isOpen={mobileOpen}
+            onClose={() => setMobileOpen(false)}
           >
-            Hire me
-          </Link>
+            {navItems.map((item, idx) => (
+              <a
+                key={idx}
+                href={item.link}
+                onClick={() => setMobileOpen(false)}
+                className="block rounded-lg px-4 py-2.5 text-sm font-medium text-neutral-600 transition-colors hover:bg-neutral-100 hover:text-neutral-900 dark:text-neutral-300 dark:hover:bg-neutral-800 dark:hover:text-white"
+              >
+                {item.name}
+              </a>
+            ))}
+            <div className="mt-2 border-t border-neutral-200 px-4 pt-4 dark:border-neutral-700 pb-4">
+              <NavButton variant="primary" className="w-full justify-center">
+                Book a Call
+              </NavButton>
+            </div>
+          </MobileNavMenu>
+        </MobileNav>
         </div>
-
-        {/* Mobile Menu Button */}
-        <div className="flex items-center gap-4 md:hidden">
-          <ModeToggle />
-          <button
-            className="flex flex-col gap-1.5 p-2"
-            onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label="Toggle menu"
-          >
-            <span
-              className={`block w-5 h-0.5 bg-foreground transition-all duration-300 ${mobileOpen ? "rotate-45 translate-y-2" : ""
-                }`}
-            />
-            <span
-              className={`block w-5 h-0.5 bg-foreground transition-all duration-300 ${mobileOpen ? "opacity-0" : ""
-                }`}
-            />
-            <span
-              className={`block w-5 h-0.5 bg-foreground transition-all duration-300 ${mobileOpen ? "-rotate-45 -translate-y-2" : ""
-                }`}
-            />
-          </button>
-        </div>
-      </nav>
-
-      {/* Mobile Menu */}
-      <div
-        className={`md:hidden overflow-hidden transition-all duration-300 bg-background/95 backdrop-blur-xl border-b border-border ${mobileOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0 border-b-0"
-          }`}
-      >
-        <div className="px-6 py-4 flex flex-col gap-3">
-          {DATA.navbar.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-2"
-              onClick={() => setMobileOpen(false)}
-            >
-              {item.label}
-            </Link>
-          ))}
-          <Link
-            href="/#contact"
-            className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-white mt-2"
-            style={{
-              background: "linear-gradient(135deg, #FF6B35 0%, #FF8C61 100%)",
-            }}
-            onClick={() => setMobileOpen(false)}
-          >
-            Hire me
-          </Link>
-        </div>
-      </div>
-    </header>
+      </Navbar>
+    </div>
   );
 }

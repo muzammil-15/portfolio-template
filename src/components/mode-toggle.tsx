@@ -13,7 +13,7 @@ export function ModeToggle() {
             variant="ghost"
             size="icon"
             onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-            className="rounded-full flex items-center justify-center p-2"
+            className="rounded-full flex items-center justify-center p-2 bg-transparent hover:bg-transparent hover:text-black dark:hover:text-white cursor-pointer"
         >
             <Sun className="h-5 w-5 dark:hidden" />
             <Moon className="hidden h-5 w-5 dark:block" />
