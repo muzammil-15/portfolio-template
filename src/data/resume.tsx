@@ -3,12 +3,12 @@ import { Icons } from "@/components/icons";
 export const DATA = {
   name: "Muzammil Hussain",
   initials: "MH",
-  role: "Freelancer",
+  role: "Full Stack Developer",
   url: "https://motionx.design",
-  headline: "I design and build products that deliver",
-  headlineAccent: "real impact",
+  headline: "I engineer scalable systems that drive",
+  headlineAccent: "business growth",
   description:
-    "Hello, I'm Muzammil Hussain, Freelancer",
+    "Hello, I'm Muzammil Hussain • Full Stack Developer",
   avatarUrl: "/avatar.png",
 
   navbar: [
@@ -118,7 +118,7 @@ export const DATA = {
   ],
 
   contact: {
-    email: "hello@motionx.design",
+    email: "muzammil.alyari@gmail.com",
     cta: "LET'S BUILD SOMETHING BOLD",
   },
 } as const;

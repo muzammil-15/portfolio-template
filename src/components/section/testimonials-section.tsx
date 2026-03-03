@@ -1,6 +1,6 @@
 "use client";
 
-import BlurFade from "@/components/magicui/blur-fade";
+import BlurFade from "@/components/motionx/blur-fade";
 import { DATA } from "@/data/resume";
 
 export default function TestimonialsSection() {

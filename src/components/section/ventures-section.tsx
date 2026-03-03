@@ -1,6 +1,6 @@
 "use client";
 
-import BlurFade from "@/components/magicui/blur-fade";
+import BlurFade from "@/components/motionx/blur-fade";
 import { DATA } from "@/data/resume";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
@@ -27,8 +27,8 @@ export default function VenturesSection() {
                         <BlurFade key={venture.title} delay={0.1 + index * 0.1}>
                             <div
                                 className={`flex flex-col gap-8 ${venture.position === "right"
-                                        ? "lg:flex-row-reverse"
-                                        : "lg:flex-row"
+                                    ? "lg:flex-row-reverse"
+                                    : "lg:flex-row"
                                     } items-stretch`}
                             >
                                 {/* Image */}
