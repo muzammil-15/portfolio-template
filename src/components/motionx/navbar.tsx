@@ -8,7 +8,11 @@ import {
   useScroll,
   useMotionValueEvent,
 } from "motion/react";
-import React, { useRef, useState } from "react";
+import React, { createContext, useContext, useRef, useState } from "react";
+
+const NavbarContext = createContext<{ visible: boolean }>({ visible: false });
+
+export const useNavbar = () => useContext(NavbarContext);
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                             */
@@ -80,19 +84,14 @@ export const Navbar = ({ children, className }: NavbarProps) => {
   });
 
   return (
-    <motion.div
-      ref={ref}
-      className={cn("fixed inset-x-0 top-0 z-5 w-full", className)}
-    >
-      {React.Children.map(children, (child) =>
-        React.isValidElement(child)
-          ? React.cloneElement(
-            child as React.ReactElement<{ visible?: boolean }>,
-            { visible },
-          )
-          : child,
-      )}
-    </motion.div>
+    <NavbarContext.Provider value={{ visible }}>
+      <motion.div
+        ref={ref}
+        className={cn("fixed inset-x-0 top-0 z-5 w-full", className)}
+      >
+        {children}
+      </motion.div>
+    </NavbarContext.Provider>
   );
 };
 
@@ -100,7 +99,10 @@ export const Navbar = ({ children, className }: NavbarProps) => {
 /*  Desktop Body                                                      */
 /* ------------------------------------------------------------------ */
 
-export const NavBody = ({ children, className, visible }: NavBodyProps) => {
+export const NavBody = ({ children, className, visible: propVisible }: NavBodyProps) => {
+  const { visible: contextVisible } = useNavbar();
+  const visible = propVisible ?? contextVisible;
+
   return (
     <motion.div
       animate={{
@@ -251,7 +253,10 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
 /*  Mobile Navigation                                                 */
 /* ------------------------------------------------------------------ */
 
-export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
+export const MobileNav = ({ children, className, visible: propVisible }: MobileNavProps) => {
+  const { visible: contextVisible } = useNavbar();
+  const visible = propVisible ?? contextVisible;
+
   return (
     <motion.div
       animate={{

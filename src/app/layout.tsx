@@ -69,16 +69,17 @@ export default function RootLayout({
           inter.variable,
           playfair.variable
         )}
+        suppressHydrationWarning
       >
         <ThemeProvider attribute="class" defaultTheme="light">
           <Navbar />
           <GridPattern
-            width={30}
-            height={30}
+            width={40}
+            height={40}
             x={-1}
             y={-1}
             strokeDasharray={"4 2"}
-            className="fixed inset-0 mask-[radial-gradient(1000px_circle_at_center,white,transparent)] z-[-1]"
+            className="fixed inset-0 mask-[radial-gradient(800px_circle_at_center,white,transparent)] z-[-1]"
           />
           <main>
             {children}

@@ -87,7 +87,7 @@ function ExperienceItem({
         <BlurFade delay={delay}>
             <div className="group relative flex flex-col sm:flex-row items-start sm:items-center py-4 sm:py-6 px-4 rounded-2xl border border-border/30 hover:border-border/50 bg-muted/30 hover:bg-muted/50 transition-all duration-500 gap-2 sm:gap-4">
                 {/* Dates */}
-                <div className="sm:w-32 flex-shrink-0 text-sm font-medium text-muted-foreground/60">
+                <div className="sm:w-32 shrink-0 text-sm font-medium text-muted-foreground/60">
                     {start} — {end}
                 </div>
 
