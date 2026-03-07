@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
+import GridPattern from "@/components/ui/grid-pattern";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -71,6 +72,14 @@ export default function RootLayout({
       >
         <ThemeProvider attribute="class" defaultTheme="light">
           <Navbar />
+          <GridPattern
+            width={30}
+            height={30}
+            x={-1}
+            y={-1}
+            strokeDasharray={"4 2"}
+            className="fixed inset-0 mask-[radial-gradient(1000px_circle_at_center,white,transparent)] z-[-1]"
+          />
           <main>
             {children}
           </main>
