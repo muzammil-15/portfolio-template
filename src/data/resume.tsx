@@ -32,17 +32,34 @@ export const DATA = {
 
   experienceBanner: {
     tagline: "I prototype rapid experiments, finalize production-ready system solutions.",
-    ctaTitle: "Let's become together",
-    ctaSubtitle: "Let's discuss your project",
-    stats: "Trusted by digital innovators",
-    companies: [
-      { name: "Vercel", logo: "/companies/vercel.svg" },
-      { name: "Stripe", logo: "/companies/stripe.svg" },
-      { name: "Linear", logo: "/companies/linear.svg" },
-      { name: "Notion", logo: "/companies/notion.svg" },
-      { name: "Figma", logo: "/companies/figma.svg" },
-      { name: "Framer", logo: "/companies/framer.svg" },
-    ],
+    partnership: {
+      title: "I prioritize client success, fostering open communication.",
+      tag: "PARTNERSHIP",
+      avatars: ["/avatars/1.png", "/avatars/2.png"],
+    },
+    techStack: {
+      title: "Focused on latest digital",
+      titleAccent: "innovations",
+      items: [
+        { name: "ReactJS", icon: "react" },
+        { name: "NextJS", icon: "nextjs" },
+        { name: "TypeScript", icon: "typescript" },
+        { name: "Tailwind", icon: "tailwind" },
+        { name: "ExpressJS", icon: "express" },
+        { name: "PostgreSQL", icon: "postgresql" },
+      ],
+    },
+    adaptability: {
+      title: "I'm highly adaptable across",
+      titleAccent: "global time zones",
+      timezones: ["CA", "GER", "US"],
+      location: "Remote from Pakistan",
+    },
+    project: {
+      tag: "PROJECT",
+      title: "Something that",
+      titleAccent: "stands out.",
+    },
   },
 
   ventures: [

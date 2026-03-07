@@ -1,9 +1,8 @@
 "use client";
 
 import BlurFade from "@/components/motionx/blur-fade";
-import BlurFadeText from "@/components/motionx/blur-fade-text";
 import { DATA } from "@/data/resume";
-import { ArrowRight, ChevronRight, Mail } from "lucide-react";
+import { ArrowRight, Mail } from "lucide-react";
 
 const BLUR_FADE_DELAY = 0.04;
 
