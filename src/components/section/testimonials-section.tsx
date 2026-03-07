@@ -8,7 +8,7 @@ export default function TestimonialsSection() {
     const testimonials = DATA.testimonials;
 
     return (
-        <section className="py-16 md:py-24" id="testimonials">
+        <section className="py-8 md:py-16" id="testimonials">
             <div className="max-w-4xl mx-auto px-4 sm:px-0 mb-12">
                 {/* Section Header */}
                 <BlurFade delay={0.1}>

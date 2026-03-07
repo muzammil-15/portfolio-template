@@ -43,7 +43,7 @@ export default function AppNavbar() {
         
 
         {/* Mobile */}
-        <div className="border flex sm:hidden w-[90%] mx-auto rounded-md border-neutral-100 dark:border-white/10">
+        <div className="border flex sm:hidden w-[94%] mx-auto rounded-md border-neutral-100 dark:border-white/10">
         <MobileNav className="rounded-md  bg-white/80 backdrop-blur-md  px-3 py-2 shadow-md dark:bg-neutral-950/80 dark:shadow-[0_4px_24px_rgba(255,255,255,0.15)]">
           <MobileNavHeader>
             <NavLogo className="text-xl font-bold tracking-tight text-neutral-900 dark:text-white">

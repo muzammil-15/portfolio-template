@@ -8,8 +8,8 @@ import Link from "next/link";
 
 export default function VenturesSection() {
     return (
-        <section className="py-16 md:py-24" id="work">
-            <div className="max-w-4xl mx-auto">
+        <section className="py-8 md:py-16" id="work">
+            <div className="max-w-4xl mx-auto px-4 sm:px-0">
                 {/* Section Header */}
                 <BlurFade delay={0.1}>
                     <div className="text-left mb-16">

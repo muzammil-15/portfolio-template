@@ -8,8 +8,8 @@ export default function Home() {
   return (
     <main className="relative">
       <HeroSection />
-      <VenturesSection />
       <ExperienceSection />
+      <VenturesSection />
       <TestimonialsSection />
       <CtaSection />
     </main>
