@@ -17,7 +17,6 @@ import { ModeToggle } from "@/components/mode-toggle";
 
 const navItems: NavItem[] = [
   { name: "Home", link: "#home" },
-  { name: "About", link: "#about" },
   { name: "Work", link: "#work" },
 ];
 
@@ -28,8 +27,8 @@ export default function AppNavbar() {
     <div className="fixed top-0 left-0 right-0 z-50">
       <Navbar className="relative mt-4">
         {/* Desktop */}
-        <div className="border hidden sm:flex w-max rounded-full mx-auto border-neutral-100 dark:border-white/10">
-          <NavBody className="mx-auto flex w-fit max-w-fit items-center justify-between rounded-full bg-white/80 backdrop-blur-md  px-3 py-2 shadow-md dark:bg-neutral-950/80 dark:shadow-[0_4px_24px_rgba(255,255,255,0.15)]">
+        <div className="border hidden sm:flex w-full max-w-4xl rounded-lg mx-auto border-neutral-100 dark:border-white/10">
+          <NavBody className="mx-auto flex w-full max-w-4xl items-center justify-between rounded-lg bg-white/80 backdrop-blur-md  px-3 py-2 shadow-md dark:bg-neutral-950/80 dark:shadow-[0_4px_24px_rgba(255,255,255,0.15)]">
           <NavLogo className="pl-4 pr-6 text-xl font-bold tracking-tight text-neutral-900 dark:text-white">
             MH
           </NavLogo>
@@ -44,8 +43,8 @@ export default function AppNavbar() {
         
 
         {/* Mobile */}
-        <div className="border flex sm:hidden w-[90%] mx-auto rounded-2xl border-neutral-100 dark:border-white/10">
-        <MobileNav className="rounded-2xl  bg-white/80 backdrop-blur-md  px-3 py-2 shadow-md dark:bg-neutral-950/80 dark:shadow-[0_4px_24px_rgba(255,255,255,0.15)]">
+        <div className="border flex sm:hidden w-[90%] mx-auto rounded-md border-neutral-100 dark:border-white/10">
+        <MobileNav className="rounded-md  bg-white/80 backdrop-blur-md  px-3 py-2 shadow-md dark:bg-neutral-950/80 dark:shadow-[0_4px_24px_rgba(255,255,255,0.15)]">
           <MobileNavHeader>
             <NavLogo className="text-xl font-bold tracking-tight text-neutral-900 dark:text-white">
               PS

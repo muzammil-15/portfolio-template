@@ -1,18 +1,19 @@
 "use client";
 
 import BlurFade from "@/components/motionx/blur-fade";
+import { Icons } from "@/components/icons";
 import { DATA } from "@/data/resume";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 
 export default function VenturesSection() {
     return (
-        <section className="py-16 md:py-24" id="projects">
-            <div className="max-w-6xl mx-auto px-6">
+        <section className="py-16 md:py-24" id="work">
+            <div className="max-w-4xl mx-auto">
                 {/* Section Header */}
                 <BlurFade delay={0.1}>
-                    <div className="text-center mb-16">
-                        <h2 className="text-sm uppercase tracking-widest text-muted-foreground mb-3">
+                    <div className="text-left mb-16">
+                        <h2 className="text-base uppercase tracking-widest text-muted-foreground mb-3">
                             Venture{" "}
                             <span className="serif-accent text-accent-gradient text-base tracking-normal">
                                 Showcase
@@ -22,98 +23,79 @@ export default function VenturesSection() {
                 </BlurFade>
 
                 {/* Venture Cards */}
-                <div className="flex flex-col gap-20">
+                <div className="flex flex-col gap-8">
                     {DATA.ventures.map((venture, index) => (
                         <BlurFade key={venture.title} delay={0.1 + index * 0.1}>
-                            <div
-                                className={`flex flex-col gap-8 ${venture.position === "right"
-                                    ? "lg:flex-row-reverse"
-                                    : "lg:flex-row"
-                                    } items-stretch`}
-                            >
-                                {/* Image */}
-                                <div className="flex-1 min-h-[300px] lg:min-h-[400px]">
-                                    <div
-                                        className="w-full h-full rounded-2xl overflow-hidden shadow-xl relative group"
-                                        style={{
-                                            background: `linear-gradient(135deg, ${venture.color}15, ${venture.color}30)`,
-                                        }}
-                                    >
-                                        {venture.image ? (
-                                            // eslint-disable-next-line @next/next/no-img-element
-                                            <img
-                                                src={venture.image}
-                                                alt={venture.title}
-                                                className="w-full h-full object-cover"
-                                            />
-                                        ) : (
-                                            <div className="w-full h-full flex items-center justify-center">
-                                                <div
-                                                    className="text-6xl font-bold opacity-20"
-                                                    style={{ color: venture.color }}
-                                                >
-                                                    {venture.title}
+                            <div className="group relative bg-card border border-border/50 rounded-2xl overflow-hidden hover:border-border transition-colors duration-500">
+                                <div className="flex flex-col lg:flex-row">
+                                    {/* Image Section */}
+                                    <div className="relative w-full lg:w-[48%] aspect-[1.4/1] lg:aspect-auto">
+                                        <div
+                                            className="w-full h-full relative"
+                                            style={{
+                                                background: `linear-gradient(135deg, ${venture.color}15, ${venture.color}30)`,
+                                            }}
+                                        >
+                                            {/* Website Badge */}
+                                            <div className="absolute top-4 right-4 z-20">
+                                                <div className="bg-black text-white px-3 py-1.5 rounded-full flex items-center gap-2 text-xs font-bold tracking-tight">
+                                                    <Icons.globe className="size-3.5" />
+                                                    Website
                                                 </div>
                                             </div>
-                                        )}
-                                        {/* Hover overlay */}
-                                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300" />
-                                    </div>
-                                </div>
 
-                                {/* Content */}
-                                <div className="flex-1 flex flex-col justify-center gap-6 lg:px-4">
-                                    <div className="flex items-center gap-3">
-                                        <div
-                                            className="w-2 h-2 rounded-full"
-                                            style={{ background: venture.color }}
-                                        />
-                                        <h3 className="text-2xl md:text-3xl font-bold">
-                                            {venture.title}
-                                        </h3>
-                                    </div>
-
-                                    <p className="text-base md:text-lg font-medium leading-relaxed">
-                                        {venture.subtitle}
-                                    </p>
-
-                                    <p className="text-sm text-muted-foreground leading-relaxed">
-                                        {venture.description}
-                                    </p>
-
-                                    {/* Tags */}
-                                    <div className="flex flex-wrap gap-2">
-                                        {venture.tags.map((tag) => (
-                                            <span
-                                                key={tag}
-                                                className="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider border border-border text-muted-foreground"
-                                            >
-                                                {tag}
-                                            </span>
-                                        ))}
-                                    </div>
-
-                                    {/* Stats */}
-                                    <div className="flex items-center gap-6 pt-2">
-                                        {Object.entries(venture.stats).map(([key, value]) => (
-                                            <div key={key} className="flex flex-col">
-                                                <span className="text-xl font-bold">{value}</span>
-                                                <span className="text-xs text-muted-foreground capitalize">
-                                                    {key}
-                                                </span>
+                                            {/* Header in Image area (per mockup style) */}
+                                            <div className="absolute inset-0 p-8 flex flex-col items-center justify-center text-center">
+                                                <div className="bg-white/90 dark:bg-black/90 px-4 py-2 rounded-xl backdrop-blur-sm shadow-sm mb-4">
+                                                    <span className="text-[10px] font-black text-[#FF6B35]">PRODUCT HUNT</span>
+                                                </div>
+                                                <h4 className="text-2xl md:text-3xl font-black tracking-tighter leading-[0.9] text-foreground max-w-[200px]">
+                                                    {venture.subtitle}
+                                                </h4>
                                             </div>
-                                        ))}
+
+                                            {venture.image && (
+                                                <img
+                                                    src={venture.image}
+                                                    alt={venture.title}
+                                                    className="absolute inset-0 w-full h-full object-cover opacity-20 grayscale filter group-hover:grayscale-0 transition-all duration-700"
+                                                />
+                                            )}
+                                        </div>
                                     </div>
 
-                                    {/* CTA */}
-                                    <Link
-                                        href={venture.href}
-                                        className="inline-flex items-center gap-2 text-sm font-semibold group/link mt-2 w-fit"
-                                        style={{ color: venture.color }}
-                                    >
-                                        View Case Study
-                                        <ArrowUpRight className="size-4 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
-                                    </Link>
+                                    {/* Content Section */}
+                                    <div className="flex-1 p-6 md:p-10 flex flex-col gap-4">
+                                        <div className="flex items-start justify-between">
+                                            <div>
+                                                <h3 className="text-2xl font-bold tracking-tight mb-1">
+                                                    {venture.title}
+                                                </h3>
+                                                <p className="text-sm text-muted-foreground font-medium">
+                                                    Jan 2024 - Feb 2024
+                                                </p>
+                                            </div>
+                                            <Link href={venture.href}>
+                                                <ArrowUpRight className="size-6 text-muted-foreground hover:text-foreground transition-colors" />
+                                            </Link>
+                                        </div>
+
+                                        <p className="text-sm md:text-base text-muted-foreground leading-relaxed mt-2">
+                                            {venture.description}
+                                        </p>
+
+                                        {/* Tags */}
+                                        <div className="flex flex-wrap gap-1.5 mt-auto pt-4">
+                                            {venture.tags.map((tag) => (
+                                                <span
+                                                    key={tag}
+                                                    className="inline-flex items-center px-3 py-1.5 rounded-xl text-[10px] font-bold tracking-tight border border-border/50 bg-muted/30 text-foreground/80"
+                                                >
+                                                    {tag}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </BlurFade>

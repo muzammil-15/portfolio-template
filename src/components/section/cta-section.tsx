@@ -7,16 +7,7 @@ import { DATA } from "@/data/resume";
 export default function CtaSection() {
     return (
         <section className="py-16 md:py-24" id="contact">
-            <div className="max-w-6xl mx-auto px-6">
-                <BlurFade delay={0.1}>
-                    {/* Top Label */}
-                    <div className="flex items-center gap-3 mb-8">
-                        <Icons.logo className="size-6 text-foreground" />
-                        <span className="text-sm font-medium uppercase tracking-widest text-muted-foreground">
-                            FROM IDEA TO EXECUTION
-                        </span>
-                    </div>
-                </BlurFade>
+            <div className="max-w-4xl mx-auto">
 
                 <BlurFade delay={0.15}>
                     {/* Main CTA */}
