@@ -91,16 +91,22 @@ function ExperienceItem({
                 </div>
 
                 {/* Main Content */}
-                <div className="flex-1 flex items-center gap-4">
-                    <div className="size-10 rounded-full bg-muted flex items-center justify-center border border-border/50 overflow-hidden font-bold text-[10px] uppercase">
-                        <Image src={logo} alt={company || school} width={40} height={40} />
+                <div className="flex-1 flex items-start sm:items-center gap-4">
+                    <div className="size-10 shrink-0 rounded-full bg-muted flex items-center justify-center border border-border/50 overflow-hidden">
+                        <Image
+                            src={logo}
+                            alt={company || school}
+                            width={40}
+                            height={40}
+                            className="w-full h-full object-center"
+                        />
                     </div>
                     <div className="flex flex-col">
-                        <h4 className="text-base font-bold tracking-tight text-foreground group-hover:text-primary transition-colors">
+                        <h4 className="text-base font-bold tracking-tight text-foreground group-hover:text-primary transition-colors leading-tight">
                             {subTitle} <span className="text-muted-foreground/40 font-normal">at</span> {mainTitle}
                         </h4>
                         {description && (
-                            <p className="text-sm text-muted-foreground/80 line-clamp-1 mt-0.5 max-w-lg">
+                            <p className="text-sm text-muted-foreground/80 line-clamp-2 sm:line-clamp-1 mt-1 max-w-lg leading-relaxed">
                                 {description}
                             </p>
                         )}
