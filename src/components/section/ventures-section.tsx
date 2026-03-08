@@ -9,7 +9,7 @@ import Link from "next/link";
 export default function VenturesSection() {
     return (
         <section className="py-8 md:py-16" id="work">
-            <div className="max-w-4xl mx-auto px-4 sm:px-0">
+            <div className="max-w-4xl mx-auto px-4 lg:px-0">
                 {/* Section Header */}
                 <BlurFade delay={0.1}>
                     <div className="text-left mb-16">
@@ -29,36 +29,14 @@ export default function VenturesSection() {
                             <div className="group relative bg-card border border-border/50 rounded-2xl overflow-hidden hover:border-border transition-colors duration-500">
                                 <div className="flex flex-col lg:flex-row">
                                     {/* Image Section */}
-                                    <div className="relative w-full lg:w-[48%] aspect-[1.4/1] lg:aspect-auto">
-                                        <div
-                                            className="w-full h-full relative"
-                                            style={{
-                                                background: `linear-gradient(135deg, ${venture.color}15, ${venture.color}30)`,
-                                            }}
-                                        >
-                                            {/* Website Badge */}
-                                            <div className="absolute top-4 right-4 z-20">
-                                                <div className="bg-black text-white px-3 py-1.5 rounded-full flex items-center gap-2 text-xs font-bold tracking-tight">
-                                                    <Icons.globe className="size-3.5" />
-                                                    Website
-                                                </div>
-                                            </div>
-
-                                            {/* Header in Image area (per mockup style) */}
-                                            <div className="absolute inset-0 p-8 flex flex-col items-center justify-center text-center">
-                                                <div className="bg-white/90 dark:bg-black/90 px-4 py-2 rounded-xl backdrop-blur-sm shadow-sm mb-4">
-                                                    <span className="text-[10px] font-black text-[#FF6B35]">PRODUCT HUNT</span>
-                                                </div>
-                                                <h4 className="text-2xl md:text-3xl font-black tracking-tighter leading-[0.9] text-foreground max-w-[200px]">
-                                                    {venture.subtitle}
-                                                </h4>
-                                            </div>
+                                    <div className="relative w-full lg:w-[48%] min-h-[300px] lg:min-h-full overflow-hidden bg-muted/30 p-4 md:p-6 group/img">
+                                        <div className="w-full h-full relative rounded-xl overflow-hidden shadow-2xl border border-border/10 bg-background">
 
                                             {venture.image && (
                                                 <img
                                                     src={venture.image}
                                                     alt={venture.title}
-                                                    className="absolute inset-0 w-full h-full object-cover opacity-20 grayscale filter group-hover:grayscale-0 transition-all duration-700"
+                                                    className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover/img:scale-110"
                                                 />
                                             )}
                                         </div>

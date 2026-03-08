@@ -7,7 +7,7 @@ import { DATA } from "@/data/resume";
 export default function CtaSection() {
     return (
         <section className="py-8 md:py-16" id="contact">
-            <div className="max-w-4xl mx-auto px-4 sm:px-0">
+            <div className="max-w-4xl mx-auto px-4 lg:px-0">
 
                 <BlurFade delay={0.15}>
                     {/* Main CTA */}

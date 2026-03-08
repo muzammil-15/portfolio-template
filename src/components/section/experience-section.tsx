@@ -6,11 +6,12 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Briefcase, GraduationCap, ChevronRight } from "lucide-react";
+import Image from "next/image";
 
 export default function ExperienceSection() {
     return (
         <section className="py-8 md:py-16" id="experience">
-            <div className="max-w-4xl mx-auto px-4 sm:px-0">
+            <div className="max-w-4xl mx-auto px-4 lg:px-0">
                 <BlurFade delay={0.1}>
                     <div className="text-left mb-12">
                         <h2 className="text-base uppercase tracking-widest text-muted-foreground mb-3 font-semibold">
@@ -72,12 +73,10 @@ function ExperienceItem({
     school,
     title,
     degree,
-    logoLabel,
+    logo,
     start,
     end,
     description,
-    href,
-    type,
     delay
 }: any) {
     const mainTitle = company || school;
@@ -94,7 +93,7 @@ function ExperienceItem({
                 {/* Main Content */}
                 <div className="flex-1 flex items-center gap-4">
                     <div className="size-10 rounded-full bg-muted flex items-center justify-center border border-border/50 overflow-hidden font-bold text-[10px] uppercase">
-                        {logoLabel}
+                       <Image src={logo} alt={company || school} width={40} height={40} />
                     </div>
                     <div className="flex flex-col">
                         <h4 className="text-base font-bold tracking-tight text-foreground group-hover:text-primary transition-colors">

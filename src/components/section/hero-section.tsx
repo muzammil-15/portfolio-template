@@ -13,7 +13,7 @@ export default function HeroSection() {
             id="hero"
             className="relative flex flex-col items-center justify-start pt-34 pb-16"
         >
-            <div className="max-w-4xl mx-auto px-4 sm:px-0">
+            <div className="max-w-4xl mx-auto px-4 lg:px-0">
                 <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
                     {/* Text Content */}
                     <div className="flex-1 flex flex-col gap-6">
