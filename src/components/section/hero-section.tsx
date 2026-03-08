@@ -38,21 +38,25 @@ export default function HeroSection() {
 
                     {/* Image */}
                     <BlurFade delay={0.2} className="flex-shrink-0">
-                        <div className="relative">
+                        <div className="relative group">
                             <div
-                                className="w-72 h-80 lg:w-80 lg:h-96 rounded-2xl overflow-hidden shadow-xl"
+                                className="w-72 h-80 lg:w-80 lg:h-96 rounded-2xl overflow-hidden shadow-xl transition-all duration-500 ease-out group-hover:shadow-2xl group-hover:-translate-y-1"
                                 style={{
                                     background:
                                         "linear-gradient(180deg, #F5F5F5 0%, #E5E5E5 100%)",
                                 }}
                             >
                                 {DATA.about.image ? (
-                                    // eslint-disable-next-line @next/next/no-img-element
-                                    <img
-                                        src={DATA.about.image}
-                                        alt={DATA.name}
-                                        className="w-full h-full object-cover"
-                                    />
+                                    <div className="relative w-full h-full overflow-hidden">
+                                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                                        <img
+                                            src={DATA.about.image}
+                                            alt={DATA.name}
+                                            className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                                        />
+                                        {/* Subtle Shine/Overlay */}
+                                        <div className="absolute inset-0 bg-linear-to-tr from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                                    </div>
                                 ) : (
                                     <div className="w-full h-full flex items-center justify-center">
                                         <div className="text-4xl font-bold text-muted-foreground/20">
