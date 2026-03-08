@@ -63,21 +63,21 @@ export const DATA = {
       role: "Product Manager, TechCorp",
       quote:
         "A true professional who transforms visions into products and creates the best digital experiences I've ever seen.",
-      avatar: "",
+      avatar: "https://i.pravatar.cc/150?u=sarah",
     },
     {
       name: "Marcus Rodriguez",
       role: "Founder, StartupXYZ",
       quote:
         "Expertise, creativity, and passion in every single project. The attention to detail is unmatched.",
-      avatar: "",
+      avatar: "https://i.pravatar.cc/150?u=marcus",
     },
     {
       name: "Emily Watson",
       role: "Design Director, Agency",
       quote:
         "A visionary designer who has brought innovative solutions, giving our projects a true competitive edge.",
-      avatar: "",
+      avatar: "https://i.pravatar.cc/150?u=emily",
     },
   ],
 
