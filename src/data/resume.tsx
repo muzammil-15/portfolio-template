@@ -23,10 +23,15 @@ export const DATA = {
       label: "Let's connect",
       icon: Icons.linkedin,
     },
-    dribbble: {
-      url: "https://dribbble.com",
-      label: "Dribbble.com/ps",
-      icon: Icons.dribbble,
+    github: {
+      url: "https://github.com/muzammil-15",
+      label: "github.com/muzammil-15",
+      icon: Icons.github,
+    },
+    x: {
+      url: "https://x.com/MuzammilHu68318",
+      label: "x.com/MuzammilHu68318",
+      icon: Icons.x,
     },
   },
 

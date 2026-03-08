@@ -25,12 +25,12 @@ export default function ExperienceSection() {
 
                 <BlurFade delay={0.2}>
                     <Tabs defaultValue="work" className="w-full">
-                        <TabsList className="bg-muted/50 p-1 rounded-xl mb-10 w-fit">
-                            <TabsTrigger value="work" className="rounded-xl px-6 py-2 data-[state=active]:bg-background data-[state=active]:text-foreground transition-all duration-300 flex items-center gap-2">
+                        <TabsList className="bg-muted/50 h-auto p-1 rounded-md mb-10 w-fit">
+                            <TabsTrigger value="work" className="rounded-md px-6 py-2 data-[state=active]:bg-background data-[state=active]:text-foreground transition-all duration-300 flex items-center gap-2">
                                 <Briefcase className="size-4" />
                                 <span>Work</span>
                             </TabsTrigger>
-                            <TabsTrigger value="education" className="rounded-xl px-6 py-2 data-[state=active]:bg-background data-[state=active]:text-foreground transition-all duration-300 flex items-center gap-2">
+                            <TabsTrigger value="education" className="rounded-md px-6 py-2 data-[state=active]:bg-background data-[state=active]:text-foreground transition-all duration-300 flex items-center gap-2">
                                 <GraduationCap className="size-4" />
                                 <span>Education</span>
                             </TabsTrigger>
@@ -93,7 +93,7 @@ function ExperienceItem({
                 {/* Main Content */}
                 <div className="flex-1 flex items-center gap-4">
                     <div className="size-10 rounded-full bg-muted flex items-center justify-center border border-border/50 overflow-hidden font-bold text-[10px] uppercase">
-                       <Image src={logo} alt={company || school} width={40} height={40} />
+                        <Image src={logo} alt={company || school} width={40} height={40} />
                     </div>
                     <div className="flex flex-col">
                         <h4 className="text-base font-bold tracking-tight text-foreground group-hover:text-primary transition-colors">

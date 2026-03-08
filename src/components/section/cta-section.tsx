@@ -43,10 +43,6 @@ export default function CtaSection() {
                 {/* Footer */}
                 <BlurFade delay={0.2}>
                     <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-6 pt-8 border-t border-border">
-                        <div className="flex items-center gap-2">
-                            <Icons.logo className="size-7 text-foreground" />
-                            <span className="text-sm font-semibold">{DATA.name}</span>
-                        </div>
 
                         <div className="flex items-center gap-4">
                             {Object.entries(DATA.social).map(([key, social]) => {
