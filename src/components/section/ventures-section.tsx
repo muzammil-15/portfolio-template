@@ -29,7 +29,7 @@ export default function VenturesSection() {
                             <div className="group relative bg-card border border-border/50 rounded-2xl overflow-hidden hover:border-border transition-colors duration-500">
                                 <div className="flex flex-col lg:flex-row">
                                     {/* Image Section */}
-                                    <div className="relative w-full lg:w-[48%] min-h-[300px] lg:min-h-full overflow-hidden bg-muted/30 p-4 md:p-6 group/img">
+                                    <div className="relative w-full lg:w-[48%] h-[240px] md:h-[300px] lg:h-auto overflow-hidden bg-muted/30 p-4 md:p-6 group/img">
                                         <div className="w-full h-full relative rounded-xl overflow-hidden shadow-2xl border border-border/10 bg-background">
 
                                             {venture.image && (
