@@ -2,10 +2,6 @@
 
 import BlurFade from "@/components/motionx/blur-fade";
 import { DATA } from "@/data/resume";
-import { ArrowRight, Mail } from "lucide-react";
-import { GlowDemo } from "../glow-demo";
-
-const BLUR_FADE_DELAY = 0.04;
 
 export default function HeroSection() {
     return (

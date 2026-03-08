@@ -3,19 +3,8 @@ import { Icons } from "@/components/icons";
 export const DATA = {
   name: "Muzammil Hussain",
   initials: "MH",
-  role: "Full Stack Developer",
   url: "https://motionx.design",
-  headline: "I engineer scalable systems that drive",
-  headlineAccent: "business growth",
-  description:
-    "Hello, I'm Muzammil Hussain • Full Stack Developer",
-  avatarUrl: "/avatar.png",
 
-  navbar: [
-    { href: "/#about", label: "About" },
-    { href: "/#projects", label: "Projects" },
-    { href: "/blog", label: "Blog" },
-  ],
 
   social: {
     linkedin: {
@@ -32,38 +21,6 @@ export const DATA = {
       url: "https://x.com/MuzammilHu68318",
       label: "x.com/MuzammilHu68318",
       icon: Icons.x,
-    },
-  },
-
-  experienceBanner: {
-    tagline: "I prototype rapid experiments, finalize production-ready system solutions.",
-    partnership: {
-      title: "I prioritize client success, fostering open communication.",
-      tag: "PARTNERSHIP",
-      avatars: ["/avatars/1.png", "/avatars/2.png"],
-    },
-    techStack: {
-      title: "Focused on latest digital",
-      titleAccent: "innovations",
-      items: [
-        { name: "ReactJS", icon: "react" },
-        { name: "NextJS", icon: "nextjs" },
-        { name: "TypeScript", icon: "typescript" },
-        { name: "Tailwind", icon: "tailwind" },
-        { name: "ExpressJS", icon: "express" },
-        { name: "PostgreSQL", icon: "postgresql" },
-      ],
-    },
-    adaptability: {
-      title: "I'm highly adaptable across",
-      titleAccent: "global time zones",
-      timezones: ["CA", "GER", "US"],
-      location: "Remote from Pakistan",
-    },
-    project: {
-      tag: "PROJECT",
-      title: "Something that",
-      titleAccent: "stands out.",
     },
   },
 
@@ -126,7 +83,8 @@ export const DATA = {
 
   contact: {
     email: "muzammil.alyari@gmail.com",
-    cta: "LET'S BUILD SOMETHING BOLD",
+    cta: "Let's build something",
+    ctaAccent: "bold together",
   },
 
   work: [

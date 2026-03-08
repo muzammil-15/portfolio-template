@@ -8,32 +8,30 @@ export default function CtaSection() {
     return (
         <section className="py-8 md:py-16" id="contact">
             <div className="max-w-4xl mx-auto px-4 lg:px-0">
-
                 <BlurFade delay={0.15}>
                     {/* Main CTA */}
-                    <div className="relative rounded-3xl overflow-hidden p-8 md:p-14 lg:p-20"
-                        style={{
-                            background: "linear-gradient(135deg, #0A0A0A 0%, #1a1a1a 50%, #0A0A0A 100%)",
-                        }}
-                    >
-                        {/* Decorative gradient orb */}
-                        <div
-                            className="absolute top-0 right-0 w-64 h-64 rounded-full blur-3xl opacity-20"
-                            style={{
-                                background: "linear-gradient(135deg, #FF6B35, #FF8C61)",
-                            }}
-                        />
+                    <div className="relative rounded-2xl overflow-hidden p-8 md:p-14 lg:p-20 bg-neutral-100 dark:bg-neutral-950 border border-black/5 dark:border-white/5 shadow-sm transition-colors duration-300">
+                        {/* Mesh Gradients / Orbs */}
+                        <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[60%] rounded-full blur-[120px] opacity-20 dark:opacity-30 pointer-events-none bg-linear-to-br from-[#FF6B35] to-[#FF8C61]" />
+                        <div className="absolute bottom-[-20%] left-[-10%] w-[40%] h-[50%] rounded-full blur-[100px] opacity-10 dark:opacity-20 pointer-events-none bg-[#FF8C61]" />
 
-                        <div className="relative z-10 flex flex-col gap-6 items-start">
-                            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.1] max-w-3xl">
-                                {DATA.contact.cta}
+                        {/* Grain/Noise Texture overlay */}
+                        <div className="absolute inset-0 opacity-[0.02] dark:opacity-[0.03] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')] brightness-100 contrast-150" />
+
+                        <div className="relative z-10 flex flex-col gap-8 items-start">
+                            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] max-w-2xl text-neutral-900 dark:text-white">
+                                {DATA.contact.cta}{" "}
+                                <br className="hidden md:block"/>
+                                <span className="serif-accent text-accent-gradient">
+                                    {DATA.contact.ctaAccent}
+                                </span>
                             </h2>
 
                             <a
                                 href={`mailto:${DATA.contact.email}`}
-                                className="inline-flex items-center gap-3 px-7 py-3.5 rounded-full text-base font-semibold text-foreground bg-white hover:bg-white/90 transition-all duration-300 hover:scale-105 hover:shadow-xl mt-4"
+                                className="group inline-flex items-center gap-3 px-8 py-4 rounded-full text-base font-bold text-white dark:text-neutral-950 bg-neutral-900 dark:bg-white hover:bg-black dark:hover:bg-neutral-100 transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg shadow-black/10 dark:shadow-white/10"
                             >
-                                <Icons.email className="size-5" />
+                                <Icons.email className="size-5 transition-transform group-hover:rotate-12" />
                                 Get in touch
                             </a>
                         </div>

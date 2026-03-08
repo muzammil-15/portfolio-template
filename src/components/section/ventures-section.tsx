@@ -1,7 +1,6 @@
 "use client";
 
 import BlurFade from "@/components/motionx/blur-fade";
-import { Icons } from "@/components/icons";
 import { DATA } from "@/data/resume";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
