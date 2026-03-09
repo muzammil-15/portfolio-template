@@ -1,6 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import { getCalApi } from "@calcom/embed-react";
+import { useEffect } from "react";
+import { useTheme } from "next-themes";
 import {
   Navbar,
   NavBody,
@@ -24,6 +27,50 @@ const navItems: NavItem[] = [
 
 export default function AppNavbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  const { resolvedTheme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+
+  const currentTheme = resolvedTheme === "dark" ? "dark" : "light";
+  const calBaseNamespace = process.env.NEXT_PUBLIC_CAL_NAMESPACE || "portfolio";
+  const calNamespace = `${calBaseNamespace}-${currentTheme}`;
+
+  useEffect(() => {
+    if (!mounted) return;
+    (async function () {
+      const cal = await getCalApi({ "namespace": calNamespace });
+      cal("ui", {
+        "hideEventTypeDetails": false,
+        "layout": "month_view",
+        "theme": currentTheme
+      });
+    })();
+  }, [currentTheme, mounted, calNamespace]);
+
+
+  const handleBookCall = async () => {
+    const cal = await getCalApi({ "namespace": calNamespace });
+
+    cal("ui", {
+      theme: currentTheme,
+      layout: "month_view"
+    });
+
+    cal("modal", {
+      calLink: process.env.NEXT_PUBLIC_CAL_LINK || "muzammil-hussain-vev9ay/portfolio",
+      config: {
+        layout: "month_view",
+        theme: currentTheme,
+      }
+    });
+  };
+
+
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50">
@@ -36,7 +83,13 @@ export default function AppNavbar() {
             </NavLogo>
             <NavItems items={navItems} />
             <div className="pl-6 flex items-center gap-3">
-              <NavButton variant="primary">Book a Call</NavButton>
+              <NavButton
+                variant="primary"
+                className="cursor-pointer"
+                onClick={handleBookCall}
+              >
+                Book a Call
+              </NavButton>
               <div className="h-5 w-px bg-neutral-200 dark:bg-neutral-800" />
               <ModeToggle />
             </div>
@@ -75,7 +128,11 @@ export default function AppNavbar() {
                 </a>
               ))}
               <div className="mt-2 border-t border-neutral-200 px-4 pt-4 dark:border-neutral-700 pb-4">
-                <NavButton variant="primary" className="w-full justify-center">
+                <NavButton
+                  variant="primary"
+                  className="cursor-pointer w-full justify-center"
+                  onClick={handleBookCall}
+                >
                   Book a Call
                 </NavButton>
               </div>
