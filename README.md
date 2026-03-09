@@ -1,29 +1,21 @@
 <div align="center">
-<img alt="Portfolio Template" src="/portfolio.png" width="90%">
+<img alt="Portfolio Template" src="public/portfolio.png" width="90%">
 </div>
 
 # Portfolio Template
 
-A high-performance, ultra-premium developer portfolio template built with **Next.js 16**, **Tailwind CSS 4**, and **Motion**. Designed to showcase your professional journey with a focus on immersive aesthetics and fluid interactions.
+Built with **Next.js**, **shadcn/ui**, and **MotionX UI**.
 
-## 🚀 Key Features
+A high-performance, ultra-premium developer portfolio template designed to showcase your professional journey with a focus on immersive aesthetics and fluid interactions.
 
-- **Theme-Synced Scheduling**: Native Cal.com integration with a custom programmatic solution that synchronizes the calendar's appearance with your website's light/dark mode in real-time.
-- **Dynamic Content**: Manage your entire portfolio (experience, ventures, testimonials, bio) from a [single configuration file](./src/data/resume.tsx).
-- **Modern Tech Stack**: Leveraging the latest React 19, Next.js 16 (App Router), and Tailwind CSS 4 features.
-- **Premium Animations**: Powered by Motion (formerly Framer Motion) using optimized `BlurFade` and `AnimatePresence` effects.
-- **Immersive Design**: Curated design system featuring glassmorphic navigation, mesh gradients, and elegant typography.
-- **SEO Optimized**: Pre-configured metadata, OpenGraph tags, and semantic HTML for maximum reach.
+## 🚀 Features
 
-## 🛠️ Tech Stack
-
-- **Framework**: Next.js 16.1 (App Router)
-- **Styling**: Tailwind CSS 4.0 (using the latest `@theme` block and `oklch` colors)
-- **Runtime**: React 19.0 (React Server Components)
-- **Animations**: Motion 12+
-- **Scheduling**: Cal.com Embed React
-- **Theming**: Next Themes (Dynamic Light/Dark Mode)
-- **Typography**: Inter (Sans) & Playfair Display (Serif Accent)
+- **Quick Setup**: Setup only takes a few minutes by editing the [single config file](./src/data/resume.tsx)
+- **Modern Stack**: Built using Next.js, React, Typescript, Shadcn/UI, TailwindCSS, Motion, and MotionX UI
+- **Book a Call**: Integrated Cal.com scheduling with seamless UI sync
+- **Adaptive Theming**: Smooth Light and Dark mode functionality that works across the entire site
+- **Fully Responsive**: Optimized for all devices and screen sizes
+- **Deployment Ready**: Optimized for Next.js and Vercel out of the box
 
 ## 📦 Getting Started
 
